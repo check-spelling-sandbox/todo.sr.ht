@@ -150,12 +150,12 @@ CREATE TABLE ticket_comment (
 	text character varying(16384),
 	submitter_id integer NOT NULL REFERENCES participant(id),
 	authenticity integer DEFAULT 0 NOT NULL,
-	superceeded_by_id integer REFERENCES ticket_comment(id) ON DELETE SET NULL
+	superseded_by_id integer REFERENCES ticket_comment(id) ON DELETE SET NULL
 );
 
 CREATE INDEX ticket_comment_submitter_id ON ticket_comment USING btree (submitter_id);
 
-CREATE INDEX ticket_comment_superceeded_by_id ON ticket_comment USING btree (superceeded_by_id);
+CREATE INDEX ticket_comment_superseded_by_id ON ticket_comment USING btree (superseded_by_id);
 
 CREATE INDEX ticket_comment_ticket_id ON ticket_comment USING btree (ticket_id);
 

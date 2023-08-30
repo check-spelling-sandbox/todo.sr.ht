@@ -474,7 +474,7 @@ func fetchCommentsByIDUnsafe(ctx context.Context) func(ids []int) ([]*model.Comm
 				rows *sql.Rows
 			)
 			if rows, err = tx.QueryContext(ctx, `
-				SELECT id, text, authenticity, superceeded_by_id
+				SELECT id, text, authenticity, superseded_by_id
 				FROM ticket_comment
 				WHERE id = ANY($1)
 			`, pq.Array(ids)); err != nil {

@@ -23,7 +23,7 @@ def upgrade():
         SET comment_count = (
             SELECT count(*)
             FROM ticket_comment
-            WHERE ticket_id = t.id AND superceeded_by_id IS NULL
+            WHERE ticket_id = t.id AND superseded_by_id IS NULL
         )
     """)
 

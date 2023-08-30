@@ -30,7 +30,7 @@ def upgrade():
 
     CREATE INDEX ticket_comment_ticket_id ON ticket_comment (ticket_id);
     CREATE INDEX ticket_comment_submitter_id ON ticket_comment (submitter_id);
-    CREATE INDEX ticket_comment_superceeded_by_id ON ticket_comment (superceeded_by_id);
+    CREATE INDEX ticket_comment_superseded_by_id ON ticket_comment (superseded_by_id);
 
     CREATE INDEX ticket_label_ticket_id ON ticket_label (ticket_id);
 
@@ -53,7 +53,7 @@ def downgrade():
     DROP INDEX event_notification_event_id;
     DROP INDEX ticket_comment_ticket_id;
     DROP INDEX ticket_comment_submitter_id;
-    DROP INDEX ticket_comment_superceeded_by_id;
+    DROP INDEX ticket_comment_superseded_by_id;
     DROP INDEX ticket_label_ticket_id;
     DROP INDEX ticket_assignee_ticket_id;
     DROP INDEX ticket_webhook_subscription_ticket_id;

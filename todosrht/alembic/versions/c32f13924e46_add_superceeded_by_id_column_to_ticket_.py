@@ -1,4 +1,4 @@
-"""Add superceeded_by_id column to ticket comment
+"""Add superseded_by_id column to ticket comment
 
 Revision ID: c32f13924e46
 Revises: 074182407bb2
@@ -15,9 +15,9 @@ import sqlalchemy as sa
 
 
 def upgrade():
-    op.add_column("ticket_comment", sa.Column("superceeded_by_id",
+    op.add_column("ticket_comment", sa.Column("superseded_by_id",
         sa.Integer, sa.ForeignKey("ticket_comment.id", ondelete="SET NULL")))
 
 
 def downgrade():
-    op.drop_column("ticket_comment", "superceeded_by_id")
+    op.drop_column("ticket_comment", "superseded_by_id")
