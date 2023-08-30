@@ -36,7 +36,7 @@ class TicketComment(Base):
     superceeded_by_id = sa.Column(sa.Integer,
             sa.ForeignKey("ticket_comment.id", ondelete="SET NULL"))
     superceeded_by = sa.orm.relationship("TicketComment",
-            backref=sa.orm.backref("superceedes"),
+            backref=sa.orm.backref("supersedes"),
             remote_side=[id])
 
     def to_dict(self, short=False):

@@ -355,7 +355,7 @@
             <small>
               <a href="#event-{{event.id}}">{{ event.created | date }}</a>
               {%- if EventType.comment in event.event_type and
-                  event.comment.superceedes -%}
+                  event.comment.supersedes -%}
                 <span title="This comment has been edited">*</span>
               {% endif %}
               {% if EventType.comment in event.event_type
